@@ -22,6 +22,10 @@ cargo build --release
 
 The binary will be available at `target/release/borrowtrack`.
 
+## Binaries
+
+Pre-compiled Linux binaries are automatically generated for every push to `main`. You can find them in the [Actions](https://github.com/Anikogb/BorrowTrack/actions) tab under the latest successful "Build and Release" workflow run.
+
 ## Usage
 
 ### Adding Entities
