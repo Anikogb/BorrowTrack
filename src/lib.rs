@@ -57,4 +57,27 @@ impl BorrowTrack {
             false
         }
     }
+
+    pub fn list_active_loans(&self) -> Vec<&models::Loan> {
+        self.db.loans.iter().filter(|l| !l.returned).collect()
+    }
+
+    pub fn overdue_loans(&self) -> Vec<&models::Loan> {
+        let now = chrono::Utc::now();
+        self.db.loans.iter()
+            .filter(|l| !l.returned && l.due_date < now)
+            .collect()
+    }
+
+    pub fn search_by_user(&self, user_name: &str) -> Vec<&models::User> {
+        self.db.users.iter()
+            .filter(|u| u.name.to_lowercase().contains(&user_name.to_lowercase()))
+            .collect()
+    }
+
+    pub fn search_by_item(&self, item_name: &str) -> Vec<&models::Item> {
+        self.db.items.iter()
+            .filter(|i| i.name.to_lowercase().contains(&item_name.to_lowercase()))
+            .collect()
+    }
 }
