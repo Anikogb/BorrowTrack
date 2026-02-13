@@ -118,6 +118,31 @@ section {
     border-color: var(--primary);
 }
 
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--text-bright);
+    border: 1px solid var(--secondary-hover);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.download-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.subtext {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
 footer {
     padding: 2rem 0;
     text-align: center;
