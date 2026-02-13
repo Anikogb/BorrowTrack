@@ -35,7 +35,39 @@
     </header>
 
     <main class="container">
-        <!-- Content will be added in further steps -->
+        <section id="features">
+            <h2>Track everything with precision</h2>
+            <p>BorrowTrack simplifies the process of lending and borrowing items. No more forgotten books, lost
+                chargers, or awkward reminders.</p>
+
+            <div class="terminal">
+                <div class="terminal-header">Terminal — borrowtrack</div>
+                <div class="terminal-body">
+                    <div class="line"><span class="prompt">$</span> borrowtrack add-item "Power Bank" "10,000mAh black"
+                    </div>
+                    <div class="line">Item 'Power Bank' added.</div>
+                    <div class="line"><span class="prompt">$</span> borrowtrack loan 1 2 1 7</div>
+                    <div class="line">Loan created. Due in 7 days.</div>
+                    <div class="line"><span class="prompt">$</span> borrowtrack list</div>
+                    <div class="line">Loan { id: 1, item_id: 1, borrower_id: 2, returned: false, ... }</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-list">
+            <div class="feature">
+                <h3>Simple Entities</h3>
+                <p>Track Users, Items, and Loans with unique identifiers.</p>
+            </div>
+            <div class="feature">
+                <h3>Overdue Alerts</h3>
+                <p>Built-in logic to detect and list items that are past their due date.</p>
+            </div>
+            <div class="feature">
+                <h3>JSON Storage</h3>
+                <p>Lightweight and portable data storage in a single file.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
