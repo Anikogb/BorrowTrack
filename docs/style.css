@@ -143,6 +143,36 @@ section {
     margin-top: 1rem;
 }
 
+.subtext {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.usage-card {
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background: var(--secondary);
+}
+
+.usage-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.usage-card code {
+    background: #e0e0e0;
+    padding: 0.2rem 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
 footer {
     padding: 2rem 0;
     text-align: center;
