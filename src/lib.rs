@@ -1,5 +1,7 @@
 pub mod models;
 pub mod db;
+#[cfg(test)]
+mod tests;
 
 use db::{Database, load_db, save_db};
 use std::path::PathBuf;
