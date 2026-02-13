@@ -69,4 +69,32 @@ mod tests {
         assert_eq!(overdue.len(), 1);
         assert!(overdue[0].due_date < now);
     }
+
+    #[test]
+    fn test_search_functionality() {
+        let (mut bt, _dir) = setup();
+        
+        bt.add_user("Alice Wonderland".to_string());
+        bt.add_item("Golden Key".to_string(), "Opens a door".to_string());
+        
+        let user_search = bt.search_by_user("alice");
+        assert_eq!(user_search.len(), 1);
+        assert_eq!(user_search[0].name, "Alice Wonderland");
+        
+        let item_search = bt.search_by_item("golden");
+        assert_eq!(item_search.len(), 1);
+        assert_eq!(item_search[0].name, "Golden Key");
+    }
+
+    #[test]
+    fn test_error_handling() {
+        let (mut bt, _dir) = setup();
+        
+        // Test marking a non-existent loan as returned
+        let success = bt.mark_returned(999);
+        assert!(!success);
+        
+        // Test loading from a non-existent path (handled in setup/db logic)
+        // verified by the fact that setup() works and creates a default DB
+    }
 }
